@@ -13,6 +13,7 @@ MAP_ADDONS=$(jq --raw-output '.map.addons' $CONFIG_PATH)
 MAP_SSL=$(jq --raw-output '.map.ssl' $CONFIG_PATH)
 MAP_SHARE=$(jq --raw-output '.map.share' $CONFIG_PATH)
 MAP_BACKUP=$(jq --raw-output '.map.backup' $CONFIG_PATH)
+MOUNT_DRIVE=$(jq --raw-output '.mount.drive' $CONFIG_PATH)
 INTERFACE=$(jq --raw-output '.interface // empty' $CONFIG_PATH)
 ALLOW_HOSTS=$(jq --raw-output '.allow_hosts | join(" ")' $CONFIG_PATH)
 
@@ -54,6 +55,11 @@ if [ "$MAP_SHARE" == "true" ]; then
 fi
 if [ "$MAP_BACKUP" == "true" ]; then
     write_config "backup"
+fi
+if [ "$MOUNT_DRIVE" == "true"]; then
+    mkdir -p /share/hdd
+    chmod -R 0777 /share/hdd
+    mount /dev/sda1 /share/hdd
 fi
 
 ##
