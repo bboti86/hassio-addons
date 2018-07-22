@@ -1,0 +1,5 @@
+{
+  "name": "Samba with USB Drive support",
+  "url": "https://github.com/bboti86/hassio-addons/tree/master/samba",
+  "maintainer": "Botond Barabas <bboti86@gmail.com>"
+}
