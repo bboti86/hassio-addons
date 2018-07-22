@@ -18,7 +18,7 @@
       "ssl": false,
       "share": true,
       "backup": true,
-      "mount drive": false
+      "mount_drive": false
     },
     "username": "",
     "password": "",
@@ -39,7 +39,7 @@
       "ssl": "bool",
       "share": "bool",
       "backup": "bool",
-      "mount drive": "bool"
+      "mount_drive": "bool"
     },
     "username": "str",
     "password": "str",
@@ -48,5 +48,5 @@
   },
   "image": "homeassistant/{arch}-addon-samba",
   "devices": ["/dev/sda1:/dev/sda1:rwm"],
-  "privileged": ["SYS_ADMIN"] 
+  "privileged": ["SYS_ADMIN"]
 }
